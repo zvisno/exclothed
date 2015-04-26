@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  size: MyString
+  color: MyString
+  exchange_to: MyString
+
+two:
+  type: 
+  size: MyString
+  color: MyString
+  exchange_to: MyString
