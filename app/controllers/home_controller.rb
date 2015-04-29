@@ -7,4 +7,8 @@ class HomeController < ApplicationController
   def new
     
   end
+
+  def show
+    Clothing.where(owner_id: current_user.id).take!
+  end
 end

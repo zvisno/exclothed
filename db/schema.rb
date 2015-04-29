@@ -20,13 +20,13 @@ ActiveRecord::Schema.define(version: 20150426155304) do
   end
 
   create_table "clothings", force: :cascade do |t|
-    t.integer  "clothing_type_id", null: false
-    t.string   "size"
-    t.string   "color"
-    t.string   "exchange_to"
-    t.string   "owner"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.integer  "clothing_type_id",             null: false
+    t.integer  "size_id",                      null: false
+    t.integer  "color_id",                     null: false
+    t.integer  "exchange_to_clothing_type_id"
+    t.integer  "owner_id",                     null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
   create_table "colors", force: :cascade do |t|
