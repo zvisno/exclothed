@@ -1,10 +1,17 @@
-<%= form_for @clothing do |f| %>
-Type:  <%= f.select :clothing_type_id, ClothingType.all.collect { |p| [p.name, p.id]} %>
-Color: <%= f.select :color_id, Color.all.collect { |c| [c.name, c.id] }%>
-Size:  <%= f.select :size_id, Size.all.collect { |s| [s.name, s.id] } %>
-Exchange to: <%= f.select :exchange_to_clothing_type_id, ClothingType.all.collect { |e| [e.name, e.id] } %>
-    <% current_user.id %>
+<div class="container">
+  <%= form_for @clothing do |f| %>
+      Type:  <%= f.select :clothing_type_id, ClothingType.all.collect { |p| [p.name, p.id]}, { include_blank: "Select ..." } %>
+      Color: <%= f.select :color_id, Color.all.collect { |c| [c.name, c.id] }, { include_blank: "Select ..." }%>
+      Size:  <%= f.select :size_id, Size.all.collect { |s| [s.name, s.id] }, { include_blank: "Select ..." } %>
+      Exchange to: <%= f.select :exchangeable_clothing_type_ids,
+                                ClothingType.all.collect { |e| [e.name, e.id] },
+                                {:prompt => "Please select"},
+                                {:multiple => true}%>
+      <% current_user.id %>
 
 
-<%=f.submit%>
-<% end %>
+      <%=f.submit%>
+      <%=link_to "Cancel", home_index_path %>
+  <% end %>
+</div>
+
