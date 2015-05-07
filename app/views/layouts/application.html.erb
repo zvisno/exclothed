@@ -2,16 +2,36 @@
 <html>
 <head>
   <title>Wardrobe</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div calss="navbar-header">
+          <a href="/" class="navbar-brand">Wardrobe</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><%= link_to "Add clothing", new_clothing_path %></li>
+            <li><%= link_to "Logout", destroy_user_session_path, :method => :delete%></li>
+          </ul>
+        </div>
 
+      </div>
+    </nav>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
 
 <%= yield %>
+
+<footer class="footer">
+    <div class="container">
+      <p class="text-muted">Eco, brands and this lifestyle </p>
+    </div>
+<footer/>
 
 </body>
 </html>

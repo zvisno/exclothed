@@ -1,19 +1,16 @@
-<h1>User Name</h1>
 <div class="container">
-  <div class="column col-xs-4">
-    <p><%= link_to "Add clothing", new_clothing_path %></p>
-    <p><%= link_to "Logout", destroy_user_session_path, :method => :delete%></p>
-  </div>
 
   <div class="column col-xs-4">
     <% @user_items.each do |key, value|%>
         <div class="item">
-        <%= key %>
-        <%= value %>
+          <%= image_tag('default')%>
+          <p><%= value[0]%></p>
+          <p><%= value[1] %></p>
+          <p><%= value[2]%></p>
         </div>
     <%end%>
+
   </div>
 
-  <div class="column col-xs-4">
-  </div>
+  <div class="column col-xs-4"></div>
 </div>

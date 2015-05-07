@@ -6,14 +6,14 @@ class HomeController < ApplicationController
     @clothings = Clothing.new
     items = @clothings.get_user_items current_user.id
 
-    items.each { |i|
-      id = i.id
+    items.each { |item|
+      id = item.id
       prop = []
 
-      name = ClothingType.find(i.clothing_type_id.to_i).name
-      size = Size.find(i.size_id.to_i).name
+      name = ClothingType.find(item.clothing_type_id.to_i).name
+      size = Size.find(item.size_id.to_i).name
 
-      all_exchange_to_items = i.exchangeable_clothing_type_ids
+      all_exchange_to_items = item.exchangeable_clothing_type_ids
 
 
       exchangeable_clothing = []

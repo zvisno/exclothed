@@ -14,6 +14,6 @@ class Clothing < ActiveRecord::Base
   accepts_nested_attributes_for :clothing_clothing_types, :reject_if => :all_blank
 
   def get_user_items uid
-    Clothing.where(owner_id: uid.to_i).all
+    Clothing.where(owner_id: uid.to_i).order(created_at: :desc).all
   end
 end

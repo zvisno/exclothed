@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   root 'home#index'
   
   get 'home/index'
+
+  get 'home' => 'home#index'
+  get 'clothings' => 'home#index'
       
   resources :clothings
   
