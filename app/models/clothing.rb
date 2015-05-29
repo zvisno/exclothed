@@ -11,9 +11,11 @@ class Clothing < ActiveRecord::Base
   validates :color_id, presence: true
   validates :owner_id, presence: true
 
-  accepts_nested_attributes_for :clothing_clothing_types, :reject_if => :all_blank
-
   def get_user_items uid
     Clothing.where(owner_id: uid.to_i).order(created_at: :desc).all
+  end
+
+  def get_all_items_of_types clothing_type_ids, uid
+    Clothing.where.not(owner_id: uid).where(clothing_type_id: clothing_type_ids)
   end
 end
