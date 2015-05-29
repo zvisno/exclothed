@@ -27,4 +27,10 @@ class ClothingsController < ApplicationController
     end
   end
 
+  def destroy
+    Clothing.find(params[:id]).destroy
+    flash[:success] = "User deleted"
+    redirect_to home_path
+  end
+
 end
