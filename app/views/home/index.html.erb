@@ -1,33 +1,9 @@
 <h1>Listing Clothing</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Size</th>
-    <th>Matching</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-  <% @user_items.each do |user_item| %>
-      <tr>
-        <td><%= clothing_name user_item%></td>
-        <td><%= clothing_size user_item%></td>
-        <td><% matching_clothing_names(user_item).each do |matching_clothing_name|%>
-            <div><%= matching_clothing_name %></div>
-        <% end %></td>
-        <!--Add user item to show-->
-        <td><%= link_to "Show", user_item %></td>
-        <!--Add user item to edit-->
-        <td><%= link_to "Edit", edit_clothing_path(user_item) %></td>
-        <!--Add user item to remove-->
-        <td><%= link_to "Remove", user_item, method: :delete, data: { confirm: "Are you sure?" }%></td>
-        <td><%= link_to "Matching", edit_clothing_clothing_clothing_types_path(user_item) %></td>
-      </tr>
+  <% @user_clothing.each do |user_clothing| %>
+      <%= render partial: 'clothings/clothing', object: user_clothing %>
+      <% user_clothing.matching_clothings.each do |match| %>
+        <%= match%>
+      <%end%>
   <% end %>
-</table>
-
 <br>
-
-<%= link_to "New clothing", new_clothing_path %>

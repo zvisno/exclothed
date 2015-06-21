@@ -1,6 +1,15 @@
 <div>
-
-  <%= matching_clothing_names(clothing) %>
   <%= clothing_name(clothing) %>
+  <%= clothing_size(clothing) %>
+  :
+  <% if matching_clothing_names(clothing).to_a.empty? %>
+      <span style="color: green;">Any</span>
+  <%end%>
+
+  <% matching_clothing_names(clothing).each do |match|%>
+      <span style="color: green;"><%= match %></span>
+  <% end %>
+
+  <%= link_to "Remove", clothing, method: :delete, data: { confirm: "Are you sure you would like to remove this Clothing?" }%>
 
 </div>

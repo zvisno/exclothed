@@ -1,4 +1,5 @@
 class ClothingsController < ApplicationController
+  respond_to :html, :js
   before_filter :require_user
 
   include ClothingHelper

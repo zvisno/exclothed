@@ -1,8 +1,8 @@
 module HomeHelper
-  def matching_clothing_names user_item
-    clothing_id = user_item.id
+  def matching_clothing_names user_clothing
+    clothing_id = user_clothing.id
 
-    matching_clothing_type_ids = user_item.exchangeable_clothing_type_ids
+    matching_clothing_type_ids = user_clothing.exchangeable_clothing_type_ids
     matching_clothing_names = []
     matching_clothing_type_ids.each { |clothing_type|
       name_of_clothing_type = clothing_type.to_i !=0 ?  ClothingType.find(clothing_type.to_i).name : "Any"
