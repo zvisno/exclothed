@@ -1,9 +1,28 @@
-<h1>Listing Clothing</h1>
-
   <% @user_clothing.each do |user_clothing| %>
-      <%= render partial: 'clothings/clothing', object: user_clothing %>
-      <% user_clothing.matching_clothings.each do |match| %>
-        <%= match%>
-      <%end%>
+
+      <div class="row">
+
+          <div class="clothing-box">
+              <%= render partial: 'clothings/clothing', object: user_clothing %>
+          </div>
+
+
+        <div class="matching-clothing-container">
+
+          <% if user_clothing.matching_clothings.empty? %>
+              <div class="matching-clothing-box">
+                <span style="color: darkblue">List the most relevant</span>
+              </div>
+          <%end%>
+
+          <% user_clothing.matching_clothings.each do |match| %>
+              <div class="matching-clothing-box">
+                <span style="color: darkblue"><%= clothing_name (match)%></span>
+              </div>
+          <%end%>
+
+        </div>
+
+      </div>
+
   <% end %>
-<br>

@@ -2,16 +2,28 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.item {
-  margin: 5px;
-}
-
-.item img {
-  position: relative;
+.clothing-box {
+  position: absolute;
+  display: inline-block;
+  width: 200px;
   height: 200px;
-  display:inline-block;
+  border: solid 1px;
 }
 
-.item p {
+.matching-clothing-box {
   position: relative;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  border: solid 1px;
 }
+
+.matching-clothing-container {
+  display: inline-block;
+  position: relative;
+  left: 200px;
+  margin-left: 2px;
+  margin-bottom: 2px;
+}
+
+

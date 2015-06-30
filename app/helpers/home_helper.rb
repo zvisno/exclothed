@@ -1,5 +1,5 @@
 module HomeHelper
-  def matching_clothing_names user_clothing
+  def expected_clothing_names user_clothing
     clothing_id = user_clothing.id
 
     matching_clothing_type_ids = user_clothing.exchangeable_clothing_type_ids

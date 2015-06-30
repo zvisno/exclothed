@@ -2,11 +2,11 @@
   <%= clothing_name(clothing) %>
   <%= clothing_size(clothing) %>
   :
-  <% if matching_clothing_names(clothing).to_a.empty? %>
+  <% if expected_clothing_names(clothing).to_a.empty? %>
       <span style="color: green;">Any</span>
   <%end%>
 
-  <% matching_clothing_names(clothing).each do |match|%>
+  <% expected_clothing_names(clothing).each do |match|%>
       <span style="color: green;"><%= match %></span>
   <% end %>
 
