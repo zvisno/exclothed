@@ -1,5 +1,5 @@
 <div class="container">
-  <%= form_for @clothing do |f| %>
+  <%= form_for @clothing, html: {multipart:true} do |f| %>
       <div class="form-group">
         Type:
         <%= f.select :clothing_type_id, ClothingType.all.collect { |p| [p.name, p.id]},
@@ -28,6 +28,10 @@
                                   {
                                   class: "form-control",
                                   multiple: true}%>
+      </div>
+      <div>
+        Upload a picture of your clothing:
+        <%=f.file_field  :picture%>
       </div>
       <% current_user.id %>
       <%=f.submit "Add", {class: "btn btn-default"}%>

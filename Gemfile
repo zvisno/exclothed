@@ -35,7 +35,11 @@ gem 'bootstrap-sass'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Use device to manage different users
 gem 'devise'
+
+# Upload files from Ruby applications
+gem 'carrierwave'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

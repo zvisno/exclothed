@@ -11,6 +11,9 @@ class Clothing < ActiveRecord::Base
   validates :color_id, presence: true
   validates :owner_id, presence: true
 
+  mount_uploader :picture, ClothingUploader
+  validates_presence_of :picture
+
   def self.get_user_items uid
     where(owner_id: uid.to_i).order(created_at: :desc).all
   end
