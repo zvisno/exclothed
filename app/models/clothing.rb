@@ -4,15 +4,15 @@ class Clothing < ActiveRecord::Base
   belongs_to :size
   belongs_to :color
   has_many :clothing_clothing_types
+  has_many :pictures
+  accepts_nested_attributes_for :pictures
+
   has_many :exchangeable_clothing_types, through: :clothing_clothing_types, source: :clothing_type
 
   validates :clothing_type_id, presence: true
   validates :size_id, presence: true
   validates :color_id, presence: true
   validates :owner_id, presence: true
-
-  mount_uploader :picture, ClothingUploader
-  validates_presence_of :picture
 
   def self.get_user_items uid
     where(owner_id: uid.to_i).order(created_at: :desc).all
