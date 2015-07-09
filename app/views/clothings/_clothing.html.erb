@@ -1,15 +1,28 @@
 <div>
-  <%= clothing_name(clothing) %>
-  <%= clothing_size(clothing) %>
-  :
-  <% if expected_clothing_names(clothing).to_a.empty? %>
-      <span style="color: green;">Any</span>
-  <%end%>
+  <%= image_tag clothing_picture(clothing), size: "100x100"%>
 
-  <% expected_clothing_names(clothing).each do |match|%>
-      <span style="color: green;"><%= match %></span>
-  <% end %>
+  <ul class="list-group clothing-params">
+      <li>
+        <%= clothing_name(clothing) %>
+      </li>
+       <li>
+         <%= clothing_size(clothing) %>
+       </li>
+  </ul>
 
+  <ul class="list-inline">
+      <% expected_clothing_names(clothing).each do |match|%>
+          <li>
+            <span class="clothing-type"><%= match %></span>
+          </li>
+      <% end %>
+      <li>
+        <% if expected_clothing_names(clothing).to_a.empty? %>
+            <span class="clothing-type">Any</span>
+        <%end%>
+      </li>
+  </ul>
+  <!--Here I am not sure if it removes a picture. If not implement.-->
   <%= link_to "Remove", clothing, method: :delete, class: "btn btn-danger", data: { confirm: "Are you sure you would like to remove this Clothing?" }%>
 
 </div>

@@ -11,11 +11,17 @@ module HomeHelper
     matching_clothing_names
   end
 
-  def clothing_name user_item
-    ClothingType.find(user_item.clothing_type_id).name
+  def clothing_name clothing
+    ClothingType.find(clothing.clothing_type_id).name
   end
 
-  def clothing_size user_item
-    Size.find(user_item.size_id).name
+  def clothing_size clothing
+    Size.find(clothing.size_id).name
+  end
+
+  def clothing_picture clothing
+    picture = Picture.where("clothing_id =?", clothing.id)
+    picture.empty? ? "no picture" : picture.first.picture
+
   end
 end

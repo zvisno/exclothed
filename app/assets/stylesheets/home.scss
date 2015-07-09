@@ -7,7 +7,6 @@
   display: inline-block;
   width: 200px;
   height: 200px;
-  border: solid 1px;
 }
 
 .matching-clothing-box {
@@ -15,7 +14,6 @@
   display: inline-block;
   width: 200px;
   height: 200px;
-  border: solid 1px;
 }
 
 .matching-clothing-container {
@@ -26,4 +24,16 @@
   margin-bottom: 2px;
 }
 
+.matching-clothing-box img {
+  position: absolute;
+  top: 0;
+}
+
+.matching-clothing-box button {
+  position: absolute;
+}
+
+.centerButtons {
+  margin: 150px auto auto auto;
+}
 

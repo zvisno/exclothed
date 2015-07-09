@@ -1,6 +1,6 @@
   <% @user_clothing.each do |user_clothing| %>
-
-      <div class="row">
+    <div class="container-fluid">
+      <div class="row-fluid">
 
           <div class="clothing-box">
               <%= render partial: 'clothings/clothing', object: user_clothing %>
@@ -17,12 +17,18 @@
 
           <% user_clothing.matching_clothings.each do |match| %>
               <div class="matching-clothing-box">
-                <span style="color: darkblue"><%= clothing_name (match)%></span>
+                <div>
+                  <%= image_tag clothing_picture(match), size: "200x200" %>
+                </div>
+                <button class="btn centerButtons">
+                  <%=clothing_name(match)%>
+                </button>
               </div>
           <%end%>
 
         </div>
 
       </div>
+    </div>
 
   <% end %>
