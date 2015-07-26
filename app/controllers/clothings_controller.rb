@@ -10,13 +10,13 @@ class ClothingsController < ApplicationController
 
   def new
     @clothing = Clothing.new
+    @clothing.pictures.build
   end
 
   def create
     @clothing = Clothing.new(user_added_clothing_params)
 
     if @clothing.save
-      @clothing.pictures.create!(:picture => params[:clothing][:picture])
       flash[:notice] = "Clothing is created"
       redirect_to home_path
     else
@@ -38,6 +38,6 @@ class ClothingsController < ApplicationController
 
   def user_added_clothing_params
     all_params = params[:clothing].merge(owner_id: current_user.id)
-    all_params.permit(:color_id, :size_id, :clothing_type_id, :owner_id, :exchangeable_clothing_type_ids => [])
+    all_params.permit(:color_id, :size_id, :clothing_type_id, :owner_id, exchangeable_clothing_type_ids: [], pictures_attributes: [:picture])
   end
 end

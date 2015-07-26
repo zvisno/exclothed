@@ -14,6 +14,9 @@ class Clothing < ActiveRecord::Base
   validates :color_id, presence: true
   validates :owner_id, presence: true
 
+  validates_associated :pictures
+  validates :pictures, presence: true
+
   def self.get_user_items uid
     where(owner_id: uid.to_i).order(created_at: :desc).all
   end

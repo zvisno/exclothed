@@ -31,7 +31,9 @@
       </div>
       <div>
         Upload a picture of your clothing:
-        <%=f.file_field  :picture%>
+        <%= f.fields_for :pictures do |picture| %>
+            <%=picture.file_field  :picture%>
+        <%end%>
       </div>
       <% current_user.id %>
       <%=f.submit "Add", {class: "btn btn-default"}%>
