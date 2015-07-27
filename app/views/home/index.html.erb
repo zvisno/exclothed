@@ -18,11 +18,14 @@
           <% user_clothing.matching_clothings.each do |match| %>
               <div class="matching-clothing-box">
                 <div>
+                  <span class="label label-info">
+                    <%=clothing_name(match)%>
+                  </span>
+                  <ul class="list-group matching-params">
+                    <li><%=clothing_size(match)%></li>
+                  </ul>
                   <%= image_tag clothing_picture(match), size: "200x200" %>
                 </div>
-                <button class="btn centerButtons">
-                  <%=clothing_name(match)%>
-                </button>
               </div>
           <%end%>
 

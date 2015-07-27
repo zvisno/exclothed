@@ -29,11 +29,12 @@
   top: 0;
 }
 
-.matching-clothing-box button {
+.matching-clothing-box .matching-params {
+  position: relative;
+  top: 20px;
+}
+
+.label {
   position: absolute;
+  z-index: 1;
 }
-
-.centerButtons {
-  margin: 150px auto auto auto;
-}
-

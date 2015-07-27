@@ -26,10 +26,15 @@ class Clothing < ActiveRecord::Base
   end
 
   def matching_clothings
-    Clothing.
-        where(clothing_type_id: exchangeable_clothing_type_ids).
-        where("clothing_clothing_types.clothing_type_id = ?", clothing_type_id).
-        joins(:clothing_clothing_types).
+    clothings = Clothing.
+        joins("LEFT JOIN clothing_clothing_types ON clothing_clothing_types.clothing_id = clothings.id").
+        where("clothing_clothing_types.id IS NULL OR clothing_clothing_types.clothing_type_id = ?", clothing_type_id).
         where.not(owner_id: owner_id)
+
+    if exchangeable_clothing_type_ids.any?
+      clothings.where(clothing_type_id: exchangeable_clothing_type_ids)
+    else
+      clothings
+    end
   end
 end

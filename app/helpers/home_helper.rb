@@ -22,6 +22,5 @@ module HomeHelper
   def clothing_picture clothing
     picture = Picture.where("clothing_id =?", clothing.id)
     picture.empty? ? "no picture" : picture.first.picture
-
   end
 end
