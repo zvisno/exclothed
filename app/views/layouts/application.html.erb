@@ -20,7 +20,10 @@
                 </a></li>
           </ul>
           <% if current_user%>
-              <div id="auth"><%= link_to "Logout", destroy_user_session_path, :method => :delete%></div>
+              <div id="auth">
+                <span><%= current_user.email%></span>
+                <%= link_to "Logout", destroy_user_session_path, :method => :delete%>
+              </div>
           <% else %>
               <div id="auth"><%= link_to "Login"%></div>
         <% end %>

@@ -5,6 +5,7 @@ class Clothing < ActiveRecord::Base
   belongs_to :color
   has_many :clothing_clothing_types
   has_many :pictures
+  has_many :clothing_wanted_clothings
   accepts_nested_attributes_for :pictures
 
   has_many :exchangeable_clothing_types, through: :clothing_clothing_types, source: :clothing_type

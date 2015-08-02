@@ -23,6 +23,10 @@
                   </span>
                   <ul class="list-group matching-params">
                     <li><%=clothing_size(match)%></li>
+                    <li>
+                      <label>Want it! <input type="checkbox" value=<%=match.id%> data-user-clothing-id=<%=user_clothing.id%>></label>
+                      <span class="user-clothing-id"></span>
+                    </li>
                   </ul>
                   <%= image_tag clothing_picture(match), size: "200x200" %>
                 </div>
