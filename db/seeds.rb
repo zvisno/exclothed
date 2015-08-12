@@ -51,3 +51,36 @@ clothing_types.each{ |ct|
     clothing_type.create_clothing_type(ct[:name])
   end
 }
+
+clothing_brands = [
+    {name: 'Oasis'},
+    {name: 'COS'},
+    {name: 'We'},
+    {name: 'HUGO BOSS'},
+    {name: 'Tommy Hilfiger'},
+    {name: 'Chanel'},
+    {name: 'Lacoste'},
+    {name: 'Armani'},
+    {name: 'Geox'},
+    {name: 'MEXX'},
+    {name: 'Intimissimi'},
+    {name: 'La Perla'},
+    {name: 'Diesel'},
+    {name: 'Dolce & Gabbana'},
+    {name: 'Kappa'},
+    {name: 'Gucci'},
+    {name: 'Miu Miu'},
+    {name: 'Chloe'},
+    {name: 'Gres'},
+    {name: 'Sissy-Boy'},
+    {name: 'A.F.C.A'},
+    {name: 'G-Star Raw'},
+    {name: '10 feet'}
+]
+
+clothing_brand = ClothingBrand.new
+clothing_brands.each{ |cb|
+  if !clothing_brand.get_clothing_brand(cb[:name])
+    clothing_brand.create_clothing_brand(cb[:name])
+  end
+}

@@ -19,6 +19,14 @@ module HomeHelper
     Size.find(clothing.size_id).name
   end
 
+  def clothing_color clothing
+    Color.find(clothing.color_id).name
+  end
+
+  def clothing_brand clothing
+    ClothingBrand.find(clothing.clothing_brand_id).name
+  end
+
   def clothing_picture clothing
     picture = Picture.where("clothing_id =?", clothing.id)
     picture.empty? ? "no picture" : picture.first.picture

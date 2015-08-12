@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150729185224) do
+ActiveRecord::Schema.define(version: 20150805070238) do
+
+  create_table "clothing_brands", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "clothing_clothing_types", force: :cascade do |t|
     t.integer  "clothing_id",      null: false
@@ -36,12 +42,13 @@ ActiveRecord::Schema.define(version: 20150729185224) do
   add_index "clothing_wanted_clothings", ["clothing_id", "wanted_clothing_id"], name: "index_clo_wanted_clo_on_clo_id_and_wanted_clo_id", unique: true
 
   create_table "clothings", force: :cascade do |t|
-    t.integer  "clothing_type_id", null: false
-    t.integer  "size_id",          null: false
-    t.integer  "color_id",         null: false
-    t.integer  "owner_id",         null: false
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.integer  "clothing_type_id",  null: false
+    t.integer  "size_id",           null: false
+    t.integer  "color_id",          null: false
+    t.integer  "owner_id",          null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.integer  "clothing_brand_id", null: false
   end
 
   create_table "colors", force: :cascade do |t|

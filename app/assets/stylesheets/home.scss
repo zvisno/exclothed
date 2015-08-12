@@ -2,11 +2,24 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.home-transition {
+  transition: background-color 2s ease-out;
+}
+
+.home-transition:hover {
+  background-color: rgba(169, 24, 67, 0.117647);
+}
+
 .clothing-box {
   position: absolute;
   display: inline-block;
   width: 200px;
   height: 200px;
+}
+
+.match {
+  color: lawngreen;
+  position: relative;
 }
 
 .matching-clothing-box {

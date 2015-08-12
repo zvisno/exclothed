@@ -6,6 +6,13 @@
                      { include_blank: "Select ..."},
                      {class: "form-control"} %>
       </div>
+
+       <div>
+        Brand:
+        <%= f.select :clothing_brand_id, ClothingBrand.all.collect { |p| [p.name, p.id]},
+                     { include_blank: "Select ..."},
+            {class: "form-control"} %>
+      </div>
       <div>
         Color:
         <%= f.select :color_id, Color.all.collect { |c| [c.name, c.id] },

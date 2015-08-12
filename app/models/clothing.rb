@@ -3,6 +3,7 @@ class Clothing < ActiveRecord::Base
   belongs_to :clothing_type
   belongs_to :size
   belongs_to :color
+  belongs_to :clothing_brand
   has_many :clothing_clothing_types
   has_many :pictures
   has_many :clothing_wanted_clothings

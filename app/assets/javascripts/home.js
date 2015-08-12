@@ -31,10 +31,13 @@ $(document).ready(function(){
           { wanted_clothing_id: wanted_clothing_id},
           function(data, status){
               if (data["result"] === true){
-                  $(value).prop('checked', true)
+                  $(value).prop('checked', true);
+                  if (data["match"] === true) {
+                      $(value).after('<div class="match">Bingo</div>')
+                  }
               }else{
                   $(value).prop('checked', false)
               }
           })
-    })
+    });
 });
