@@ -3,11 +3,12 @@
 
 $(document).ready(function(){
     $(".matching-clothing-box").hover(function(){
-        $(this).find("div img").fadeOut(300);
+        $(this).find("div img.main-image").fadeOut(300);
     }, function(){
-        $(this).find("div img").fadeIn(300);
+        $(this).find("div img.main-image").fadeIn(300);
     });
-//  like some clothing by enabling a checkbox
+
+
     $('ul.list-group input').click(function(){
         var wanted_clothing_id = $(this).context.value;
         var user_clothing_id =$(this).context.dataset.userClothingId;
@@ -22,18 +23,20 @@ $(document).ready(function(){
             })
         }
     });
-//  render liked or not liked clothing
-    var wanted_clothings = $('ul.list-group input');
-    $.each(wanted_clothings, function(index, value){
+
+
+    var wanted_clothing_boxes = $('.matching-clothing-box');
+    $.each(wanted_clothing_boxes, function(index, wanted_clothing_box){
+        var value = $("input", wanted_clothing_box)[0];
         var wanted_clothing_id = value.value;
         var user_clothing_id = value.dataset.userClothingId;
         $.get("/clothings/" + user_clothing_id + "/clothing_wanted_clothings",
           { wanted_clothing_id: wanted_clothing_id},
-          function(data, status){
+          function(data){
               if (data["result"] === true){
                   $(value).prop('checked', true);
                   if (data["match"] === true) {
-                      $(value).after('<div class="match">Bingo</div>')
+                      var img = $("img.match", wanted_clothing_box).removeClass("hidden-img");
                   }
               }else{
                   $(value).prop('checked', false)
