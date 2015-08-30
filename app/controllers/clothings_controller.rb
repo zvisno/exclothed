@@ -31,8 +31,16 @@ class ClothingsController < ApplicationController
   end
 
   def destroy
-    Clothing.find(params[:id]).destroy
-    flash[:success] = "User deleted"
+    # TBD. Handle exception here when user wants to delete someone else's clothes
+    item_of_clothes = current_user.clothing.find(params[:id])
+
+    if item_of_clothes.nil?
+      flash[:notice] = "Hey! What are you doing?"
+    else
+      item_of_clothes.destroy
+      flash[:success] = "User deleted"
+    end
+
     redirect_to home_path
   end
 

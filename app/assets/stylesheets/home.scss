@@ -15,18 +15,11 @@
   background-color: #F3BDBD;
 }
 
-.clothing-box {
-  position: absolute;
-  display: inline-block;
-  width: 200px;
-  height: 200px;
-}
-
 .hidden-img {
   display: none;
 }
 
-.matching-clothing-box img.match {
+.index-clothes-box img.match {
   top: 75px;
   left: 75px;
   opacity: 0.85;
@@ -36,31 +29,30 @@
   z-index: 1;
 }
 
-.matching-clothing-box {
+.index-clothes-box {
   position: relative;
   display: inline-block;
   width: 200px;
   height: 200px;
 }
 
-.matching-clothing-container {
+.index-clothes-container {
   display: inline-block;
   position: relative;
-  left: 200px;
   margin-left: 2px;
   margin-bottom: 2px;
 }
 
-.matching-clothing-box img {
+.index-clothes-box img {
   position: absolute;
   top: 0;
 }
 
-.matching-clothing-box > #want_it {
+.index-clothes-box > #want_it {
   position: relative;
 }
 
-.matching-clothing-box .matching-params {
+.index-clothes-box .matching-params {
   position: relative;
   top: 20px;
 }
