@@ -2,7 +2,6 @@
 /* Email: */
 #user_email {
    background: #EEE9E9;
-   font-family: Helvetica;
    font-size: 12px;
    color: #000000;
    line-height: 18px;
@@ -12,7 +11,6 @@
 #user_password {
   margin: 0 auto;
   background: #F6EAEA;
-  font-family: Helvetica;
   font-size: 12px;
   color: #000000;
   line-height: 18px;
@@ -20,17 +18,12 @@
 }
 
  #sign_in {
-    background: #F3BDBD;
-    font-family: Helvetica;
+    background: #ff5052;
     font-size: 12px;
     color: #FDFDFD;
     line-height: 18px;
     width: 200px;
 }
-
- .form-signin {
-   margin: 0 auto;
- }
 
  input {
    padding: 0;
