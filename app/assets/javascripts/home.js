@@ -2,7 +2,7 @@
 // All this logic will automatically be available in application.js.
 
 $(document).ready(function(){
-    $(".index-clothes-box").hover(function(){
+    $(".index-clothes-container").hover(function(){
         $(this).find("div img.main-image").fadeOut(300);
     }, function(){
         $(this).find("div img.main-image").fadeIn(300);
@@ -22,7 +22,7 @@ $(document).ready(function(){
         }
     });
 
-    var wanted_clothes_boxes = $('.index-clothes-box');
+    var wanted_clothes_boxes = $('.index-clothes-container');
     $.each(wanted_clothes_boxes, function(index, wanted_clothes_box){
         var value = $(".want-it", wanted_clothes_box)[0];
         var wanted_clothes_id = value.value;
