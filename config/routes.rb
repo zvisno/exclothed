@@ -10,16 +10,15 @@ Rails.application.routes.draw do
   
   get 'home', to: 'home#index'
 
-  get 'home', to: 'home#index'
-  get 'clothings', to: 'home#index'
-
-  resources :user_wanted_clothes
+  get 'clothings', to: 'clothings#index'
 
   resources :clothings do
     resource :clothing_clothing_types
     resource :clothing_wanted_clothings
     resource :pictures
   end
+
+  resources :user_wanted_clothes
   
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

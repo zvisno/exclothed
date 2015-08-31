@@ -1,0 +1,35 @@
+<!--Own clothes-->
+<% @user_clothes.each do |user_clothes| %>
+    <div class="container-fluid home-transition">
+      <div class="row-fluid">
+        <div class="clothing-box">
+          <%= render partial: 'clothings/clothing', object: user_clothes %>
+        </div>
+      </div>
+    </div>
+<% end %>
+
+<div class="container-fluid">
+  <div class="kerzon"></div>
+</div>
+
+<!--Wanted clothes-->
+<% if !current_user.user_wanted_clothes.empty? %>
+    <% current_user.user_wanted_clothes.each do |wanted_clothes|%>
+        <div class="container-fluid">
+          <div class="row-fluid">
+            <div class="clothing-box">
+              <%= render partial: 'clothings/clothing', object: Clothing.find(wanted_clothes.wanted_clothes_id) %>
+            </div>
+          </div>
+        </div>
+    <% end %>
+<% else %>
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="clothing-box">
+          <%= "You haven't liked any clothes." %>
+        </div>
+      </div>
+    </div>
+<% end %>

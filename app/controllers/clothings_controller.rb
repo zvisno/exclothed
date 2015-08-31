@@ -4,6 +4,10 @@ class ClothingsController < ApplicationController
 
   include ClothingHelper
 
+  def index
+    @user_clothes = Clothing.get_user_items(current_user.id)
+  end
+
   def show
     render Clothing.find params[:id]
   end
