@@ -1,4 +1,5 @@
-<div class="container col-md-4 col-md-offset-4">
+<div class="container">
+<div class="col-md-4 col-md-offset-4">
 
     <h3>Sign up</h3>
 
@@ -6,15 +7,15 @@
       <%= devise_error_messages! %>
 
       <div class="field">
-        <%= f.email_field :email, autofocus: true , value: "Email"%>
+        <%= f.email_field :email, autofocus: true , placeholder: "Email"%>
       </div>
 
       <div class="field">
-        <%= f.password_field :password, autocomplete: "off", value: "Password #{@minimum_password_length} characters minimum" %>
+        <%= f.password_field :password, autocomplete: "off", placeholder: "Password #{@minimum_password_length} characters minimum" %>
       </div>
 
       <div class="field">
-        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Repeat password" %>
       </div>
         <%= f.submit "Sign up", id: "sign_up" %>
     <% end %>

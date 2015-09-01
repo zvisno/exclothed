@@ -14,22 +14,14 @@
 </div>
 
 <!--Wanted clothes-->
-<% if !current_user.user_wanted_clothes.empty? %>
-    <% current_user.user_wanted_clothes.each do |wanted_clothes|%>
-        <div class="container-fluid">
-          <div class="row-fluid">
-            <div class="clothing-box">
-              <%= render partial: 'clothings/clothing', object: Clothing.find(wanted_clothes.wanted_clothes_id) %>
-            </div>
+<div class="container-fluid">
+    <% if current_user.user_wanted_clothes.empty? %>
+        <%= "You haven't liked any clothes." %>
+    <% else %>
+      <% current_user.user_wanted_clothes.each do |wanted_clothes|%>
+          <div class="index-clothes-container">
+            <%= render partial: 'clothings/clothing', object: Clothing.find(wanted_clothes.wanted_clothes_id) %>
           </div>
-        </div>
+      <% end %>
     <% end %>
-<% else %>
-    <div class="container-fluid">
-      <div class="row-fluid">
-        <div class="clothing-box">
-          <%= "You haven't liked any clothes." %>
-        </div>
-      </div>
-    </div>
-<% end %>
+</div>

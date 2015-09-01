@@ -1,4 +1,3 @@
-<div>
   <%= image_tag clothing_picture(clothing), size: "100x100"%>
 
   <ul class="list-group clothing-params">
@@ -33,4 +32,3 @@
   <%if(clothing.owner_id == current_user.id)%>
     <%= link_to "Remove", clothing, method: :delete, class: "btn btn-danger", data: { confirm: "Are you sure you would like to remove this Clothing?" }%>
   <%end%>
-</div>
