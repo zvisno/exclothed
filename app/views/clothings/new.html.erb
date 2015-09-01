@@ -1,50 +1,52 @@
 <div class="container">
-  <%= form_for @clothing, html: {multipart:true} do |f| %>
-      <div class="form-group">
-        Type:
-        <%= f.select :clothing_type_id, ClothingType.all.collect { |p| [p.name, p.id]},
-                     { include_blank: "Select ..."},
-                     {class: "form-control"} %>
-      </div>
+  <div class="col-md-4 col-md-offset-4 ">
+      <%= form_for @clothing, html: {multipart:true} do |f| %>
+          <div class="form-group">
+            Type:
+            <%= f.select :clothing_type_id, ClothingType.all.collect { |p| [p.name, p.id]},
+                         { include_blank: "Select ..."},
+                         {class: "form-control"} %>
+          </div>
 
-       <div>
-        Brand:
-        <%= f.select :clothing_brand_id, ClothingBrand.all.collect { |p| [p.name, p.id]},
-                     { include_blank: "Select ..."},
-            {class: "form-control"} %>
-      </div>
-      <div>
-        Color:
-        <%= f.select :color_id, Color.all.collect { |c| [c.name, c.id] },
-                                { include_blank: "Select ..."},
-                                { class: "form-control"} %>
-      </div>
+           <div>
+            Brand:
+            <%= f.select :clothing_brand_id, ClothingBrand.all.collect { |p| [p.name, p.id]},
+                         { include_blank: "Select ..."},
+                {class: "form-control"} %>
+          </div>
+          <div>
+            Color:
+            <%= f.select :color_id, Color.all.collect { |c| [c.name, c.id] },
+                                    { include_blank: "Select ..."},
+                                    { class: "form-control"} %>
+          </div>
 
-      <div>
-        Size:
-        <%= f.select :size_id, Size.all.collect { |s| [s.name, s.id] },
-                                   { include_blank: "Select ..." },
-                                   { class: "form-control"} %>
-      </div>
+          <div>
+            Size:
+            <%= f.select :size_id, Size.all.collect { |s| [s.name, s.id] },
+                                       { include_blank: "Select ..." },
+                                       { class: "form-control"} %>
+          </div>
 
-      <div>
-        Exchange to:
-        <%= f.select :exchangeable_clothing_type_ids,
-                     ClothingType.all.collect { |e| [e.name, e.id] },
-                                   {:prompt => "Please select"},
-                                  {
-                                  class: "form-control",
-                                  multiple: true}%>
-      </div>
-      <div>
-        Upload a picture of your clothing:
-        <%= f.fields_for :pictures do |picture| %>
-            <%=picture.file_field  :picture%>
-        <%end%>
-      </div>
-      <% current_user.id %>
-      <%=f.submit "Add", {class: "btn btn-default"}%>
-      <%=link_to "Cancel", home_path %>
-  <% end %>
+          <div>
+            I want to exchange this clothes to:
+            <%= f.select :exchangeable_clothing_type_ids,
+                         ClothingType.all.collect { |e| [e.name, e.id] },
+                                       {:prompt => "Please select"},
+                                      {
+                                      class: "form-control",
+                                      multiple: true}%>
+          </div>
+          <div>
+            Upload a picture of your clothes:
+            <%= f.fields_for :pictures do |picture| %>
+                <%=picture.file_field  :picture%>
+            <%end%>
+          </div>
+          <% current_user.id %>
+          <%=f.submit "Add", {class: "btn btn-default"}%>
+          <%=link_to "Cancel", home_path %>
+      <% end %>
+  </div>
 </div>
 

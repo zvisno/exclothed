@@ -4,7 +4,7 @@
     <% @user_clothes.each do |user_clothes| %>
         <div class="container-fluid home-transition">
           <div class="row-fluid">
-            <div class="clothing-box">
+            <div class="users-clothes-container">
               <%= render partial: 'clothings/clothing', object: user_clothes %>
             </div>
           </div>
@@ -22,7 +22,7 @@
             <%= "You haven't liked any clothes." %>
         <% else %>
           <% current_user.user_wanted_clothes.each do |wanted_clothes|%>
-              <div class="index-clothes-container">
+              <div class="wanted-clothes-container">
                 <%= render partial: 'clothings/clothing', object: Clothing.find(wanted_clothes.wanted_clothes_id) %>
               </div>
           <% end %>
