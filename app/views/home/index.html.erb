@@ -1,21 +1,23 @@
 <!--Other users clothes-->
-<div class="container-fluid">
-  <% @other_users_clothes.each do |item| %>
-          <div class="index-clothes-container">
-              <div>
-                  <span class="label label-info">
-                    <%=clothing_name(item)%>
-                  </span>
-                  <ul class="list-group matching-params">
-                    <li><%=clothing_size(item)%></li>
-                    <li>
-                      <label>I want it!
-                        <input class="want-it" type="checkbox" value=<%=item.id%>>
-                      </label>
-                    </li>
-                  </ul>
-                <%= image_tag clothing_picture(item), size: "200x200", class: "main-image" %>
+<div class="container">
+    <div class="container-fluid">
+      <% @other_users_clothes.each do |item| %>
+              <div class="index-clothes-container">
+                  <div>
+                      <span class="label label-info">
+                        <%=clothing_name(item)%>
+                      </span>
+                      <ul class="list-group matching-params">
+                        <li><%=clothing_size(item)%></li>
+                        <li>
+                          <label>I want it!
+                            <input class="want-it" type="checkbox" value=<%=item.id%>>
+                          </label>
+                        </li>
+                      </ul>
+                    <%= image_tag clothing_picture(item), size: "200x200", class: "main-image" %>
+                  </div>
               </div>
-          </div>
-  <% end %>
+      <% end %>
+    </div>
 </div>
