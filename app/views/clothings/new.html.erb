@@ -37,11 +37,12 @@
                                       class: "form-control",
                                       multiple: true}%>
           </div>
-          <div>
+          <div><p>
             Upload a picture of your clothes:
-            <%= f.fields_for :pictures do |picture| %>
+            <%= f.fields_for :pictures, html: { multipart: true } do |picture| %>
                 <%=picture.file_field  :picture%>
-            <%end%>
+                <%= picture.hidden_field :picture_cache %>
+            <%end%></p>
           </div>
           <% current_user.id %>
           <%=f.submit "Add", {class: "btn btn-default"}%>
