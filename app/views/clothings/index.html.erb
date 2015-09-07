@@ -23,8 +23,12 @@
         <% else %>
           <% current_user.user_wanted_clothes.each do |wanted_clothes|%>
               <div class="wanted-clothes-container">
-                <%= render partial: 'clothings/clothing', object: Clothing.find(wanted_clothes.wanted_clothes_id) %>
-              </div>
+                <%if isArticleOfClothesExists(wanted_clothes.wanted_clothes_id)%>
+                    <%= render partial: 'clothings/clothing', object: Clothing.find(wanted_clothes.wanted_clothes_id) %>
+                <%else%>
+                    <%render text: "Was removed"%>
+                <%end%>
+                </div>
           <% end %>
         <% end %>
     </div>

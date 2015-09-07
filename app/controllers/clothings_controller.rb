@@ -22,7 +22,7 @@ class ClothingsController < ApplicationController
 
     if @clothing.save
       flash[:notice] = "Clothing is created"
-      redirect_to home_path
+      redirect_to clothings_path
     else
       all = []
       errors = @clothing.errors.messages
@@ -41,11 +41,12 @@ class ClothingsController < ApplicationController
     if item_of_clothes.nil?
       flash[:notice] = "Hey! What are you doing?"
     else
+      item_of_clothes.pictures.destroy
       item_of_clothes.destroy
-      flash[:success] = "User deleted"
+      flash[:success] = "User is deleted"
     end
 
-    redirect_to home_path
+    redirect_to clothings_path
   end
 
   def user_added_clothing_params
