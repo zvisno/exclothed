@@ -4,12 +4,18 @@
 # Examples:
 #
 colors = [
+    {name: 'Green'},
+    {name: 'Gray'},
+    {name: 'Gold'},
     {name: 'Red' },
+    {name: 'Brown'},
     {name: 'Blue' },
     {name: 'Black'},
     {name: 'White'},
     {name: 'Yellow'},
-    {name: 'Orange'}
+    {name: 'Orange'},
+    {name: 'Purple'},
+    {name: 'Pink'}
 ]
 
 color = Color.new
@@ -35,14 +41,26 @@ sizes.each{ |s|
 }
 
 clothing_types = [
+    {name: 'Cardigan'},
+    {name: 'Coat'},
+    {name: 'Hoody'},
     {name: 'Skirt'},
     {name: 'Trausers'},
+    {name: 'Jacket'},
     {name: 'Jeans'},
+    {name: 'Jumper'},
     {name: 'Blouse'},
+    {name: 'Blazer'},
     {name: 'Dress'},
+    {name: 'Poncho'},
+    {name: 'Robe'},
     {name: 'T-shirt'},
     {name: 'Shirt'},
-    {name: 'Shorts'}
+    {name: 'Shorts'},
+    {name: 'Scarf'},
+    {name: 'Suit'},
+    {name: 'Sweatshirt'},
+    {name: 'Vest'}
 ]
 
 clothing_type = ClothingType.new
