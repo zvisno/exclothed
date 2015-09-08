@@ -22,13 +22,11 @@
             <%= "You haven't liked any clothes." %>
         <% else %>
           <% current_user.user_wanted_clothes.each do |wanted_clothes|%>
-              <div class="wanted-clothes-container">
-                <%if isArticleOfClothesExists(wanted_clothes.wanted_clothes_id)%>
+              <%if isArticleOfClothesExists(wanted_clothes.wanted_clothes_id)%>
+                  <div class="wanted-clothes-container">
                     <%= render partial: 'clothings/clothing', object: Clothing.find(wanted_clothes.wanted_clothes_id) %>
-                <%else%>
-                    <%render text: "Was removed"%>
-                <%end%>
-                </div>
+                  </div>
+              <%end%>
           <% end %>
         <% end %>
     </div>
