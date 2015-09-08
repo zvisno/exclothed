@@ -19,6 +19,10 @@ class Clothing < ActiveRecord::Base
   validates_associated :pictures
   validates :pictures, presence: true
 
+  def self.get_other_users_clothes uid
+    where.not(owner_id: uid).order(created_at: :desc).all
+  end
+
   def self.get_user_items uid
     where(owner_id: uid.to_i).order(created_at: :desc).all
   end

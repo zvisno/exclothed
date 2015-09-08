@@ -1,42 +1,23 @@
-  <% @user_clothing.each do |user_clothing| %>
-    <div class="container-fluid home-transition">
-      <div class="row-fluid">
-
-          <div class="clothing-box">
-              <%= render partial: 'clothings/clothing', object: user_clothing %>
-          </div>
-
-
-        <div class="matching-clothing-container">
-
-          <% if user_clothing.matching_clothings.empty? %>
-              <div class="matching-clothing-box">
-                <span style="color: darkblue">List the most relevant</span>
+<!--Other users clothes-->
+<div class="container">
+    <div class="container-fluid">
+      <% @other_users_clothes.each do |item| %>
+              <div class="index-clothes-container">
+                  <div>
+                      <span class="label label-info">
+                        <%=clothing_name(item)%>
+                      </span>
+                      <ul class="list-group matching-params">
+                        <li><%=clothing_size(item)%></li>
+                        <li>
+                          <label>I want it!
+                            <input class="want-it" type="checkbox" value=<%=item.id%>>
+                          </label>
+                        </li>
+                      </ul>
+                    <%= image_tag clothing_picture(item), size: "200x200", class: "main-image" %>
+                  </div>
               </div>
-          <%end%>
-
-          <% user_clothing.matching_clothings.each do |match| %>
-              <div class="matching-clothing-box">
-                <div>
-                  <span class="label label-info">
-                    <%=clothing_name(match)%>
-                  </span>
-                  <ul class="list-group matching-params">
-                    <li><%=clothing_size(match)%></li>
-                    <li>
-                      <label>Want it! <input type="checkbox" value=<%=match.id%> data-user-clothing-id=<%=user_clothing.id%>></label>
-                    </li>
-
-                  </ul>
-                  <%= image_tag clothing_picture(match), size: "200x200", class: "main-image" %>
-                  <img class="hidden-img match" src="assets/checkmark.png">
-                </div>
-              </div>
-          <%end%>
-
-        </div>
-
-      </div>
+      <% end %>
     </div>
-
-  <% end %>
+</div>

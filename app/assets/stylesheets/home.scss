@@ -2,65 +2,29 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.container-fluid {
-  margin-left: 200px;
-  margin-right: 200px;
-}
-
-.home-transition {
-  transition: background-color 2s ease-out;
-}
-
-.home-transition:hover {
-  background-color: #F3BDBD;
-}
-
-.clothing-box {
-  position: absolute;
-  display: inline-block;
-  width: 200px;
-  height: 200px;
-}
-
 .hidden-img {
   display: none;
 }
 
-.matching-clothing-box img.match {
-  top: 75px;
-  left: 75px;
-  opacity: 0.85;
-  margin: auto;
-  width: 50px;
-  height: 50px;
-  z-index: 1;
-}
-
-.matching-clothing-box {
-  position: relative;
+.index-clothes-container {
   display: inline-block;
+  position: relative;
+  margin-left: 25px;
+  margin-bottom: 25px;
   width: 200px;
   height: 200px;
 }
 
-.matching-clothing-container {
-  display: inline-block;
-  position: relative;
-  left: 200px;
-  margin-left: 2px;
-  margin-bottom: 2px;
-}
-
-.matching-clothing-box img {
+.index-clothes-container img {
   position: absolute;
   top: 0;
 }
 
-.matching-clothing-box > #want_it {
+.index-clothes-container > #want_it {
   position: relative;
 }
 
-.matching-clothing-box .matching-params {
+.index-clothes-container .matching-params {
   position: relative;
   top: 20px;
 }
