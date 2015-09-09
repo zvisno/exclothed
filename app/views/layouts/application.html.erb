@@ -31,9 +31,15 @@
       </div>
     </nav>
     <div class="container ">
-      <div class="alert alert-warning"><%= notice %></div>
-      <div class="alert alert-danger"><%= alert %></div>
-      <div class="alert alert-success"><%= success %></div>
+      <% if notice %>
+        <div class="alert alert-warning"><%= notice %></div>
+      <% end %>
+      <%if alert%>
+        <div class="alert alert-danger"><%= alert %></div>
+      <%end%>
+      <%if success%>
+        <div class="alert alert-success"><%= success %></div>
+      <%end%>
     </div>
 
 <%= yield %>

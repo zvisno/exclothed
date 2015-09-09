@@ -25,11 +25,8 @@ class ClothingsController < ApplicationController
       redirect_to clothings_path
     else
       all = []
-      errors = @clothing.errors.messages
-      errors.each { |key, value|
-        all.push "#{key} : #{value[0]}"
-      }
-      flash.now[:notice] = all
+      errors = @clothing.errors.full_messages.to_sentence
+      flash.now[:notice] = errors
       render action: "new"
     end
   end
