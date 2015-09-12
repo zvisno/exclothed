@@ -3,6 +3,7 @@ class ClothingsController < ApplicationController
   before_filter :require_user
 
   include ClothingHelper
+  include UserWantedClothingHelper
 
   def index
     @user_clothes = Clothing.get_user_items(current_user.id)
