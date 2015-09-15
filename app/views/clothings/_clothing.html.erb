@@ -34,4 +34,5 @@
   <!--Dependent destroy to use for deleting the pictures-->
   <%if(clothing.owner_id == current_user.id)%>
     <%= link_to "Remove", clothing, method: :delete, class: "btn btn-danger", data: { confirm: "Are you sure you would like to remove this Clothing?" }%>
+    <%= link_to "Exchangeable", clothing_clothing_clothing_types_path(clothing)%>
   <%end%>

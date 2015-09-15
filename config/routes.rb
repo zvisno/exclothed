@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get 'clothings', to: 'clothings#index'
 
   resources :clothings do
-    resource :clothing_clothing_types
+    resources :clothing_clothing_types
     resource :clothing_wanted_clothings
     resource :pictures
   end

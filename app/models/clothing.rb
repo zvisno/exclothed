@@ -28,10 +28,10 @@ class Clothing < ActiveRecord::Base
   end
 
   def get_all_items_of_types clothing_type_ids, uid
-    Clothing.where.not(owner_id: uid).where(clothing_type_id: clothing_type_ids)
+    where.not(owner_id: uid).where(clothing_type_id: clothing_type_ids)
   end
 
-  def matching_clothings
+  def matching_clothes
     clothings = Clothing.
         joins("LEFT JOIN clothing_clothing_types ON clothing_clothing_types.clothing_id = clothings.id").
         where("clothing_clothing_types.id IS NULL OR clothing_clothing_types.clothing_type_id = ?", clothing_type_id).

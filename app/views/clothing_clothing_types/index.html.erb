@@ -1,0 +1,14 @@
+<div class="container">
+
+  <!--Matching clothes-->
+  <% @matching_clothes.each do |match| %>
+      <div class="container-fluid home-transition">
+        <div class="row-fluid">
+          <div class="users-clothes-container">
+            <%= render partial: 'clothings/clothing', object: match %>
+          </div>
+        </div>
+      </div>
+  <% end %>
+
+</div>
