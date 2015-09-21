@@ -1,6 +1,15 @@
+<h1>Your personal Dressing Room on Exclothed</h1>
+<p>Add your clothes. Manage your clothes. Find articles of clothes for exchange. And finally exchange your clothes.</p>
+
 <div class="container">
 
     <!--Own clothes-->
+
+  <div class="container-fluid">
+    <div class="kerzon-text"><h2>Your Clothes </h2></div>
+    <div class="kerzon"></div>
+  </div>
+
     <% @user_clothes.each do |user_clothes| %>
         <div class="container-fluid home-transition">
           <div class="row-fluid">
@@ -11,20 +20,21 @@
         </div>
     <% end %>
 
+  <!--Liked clothes-->
+
     <div class="container-fluid">
-      <div class="kerzon-text"><p>These are the clothes you liked: </p></div>
+      <div class="kerzon-text"><h2>Clothes you liked </h2></div>
       <div class="kerzon"></div>
     </div>
 
-    <!--Wanted clothes-->
     <div class="container-fluid">
         <% if current_user.user_wanted_clothes.empty? %>
-            <%= "You haven't liked any clothes." %>
+            <%= "You want no clothes?" %>
         <% else %>
           <% current_user.user_wanted_clothes.each do |wanted_clothes|%>
               <%if isArticleOfClothesExists(wanted_clothes.wanted_clothes_id)%>
                   <div class="wanted-clothes-container">
-                    <%= render partial: 'clothings/clothing', object: Clothing.find(wanted_clothes.wanted_clothes_id) %>
+                    <%= render partial: 'home/clothes', object: Clothing.find(wanted_clothes.wanted_clothes_id) %>
                   </div>
               <%end%>
           <% end %>

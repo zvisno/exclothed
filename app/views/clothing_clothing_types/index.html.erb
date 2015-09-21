@@ -1,11 +1,11 @@
 <div class="container">
 
   <!--Matching clothes-->
-  <% @matching_clothes.each do |match| %>
-      <div class="container-fluid home-transition">
+  <% @matching_clothes.each do |piece_of_clothes| %>
+      <div class="container-fluid">
         <div class="row-fluid">
-          <div class="users-clothes-container">
-            <%= render partial: 'clothings/clothing', object: match %>
+          <div class="exchangeable-clothes-container">
+            <%= render partial: 'clothing_clothing_types/clothes', object: piece_of_clothes, locals: {id: params[:clothing_id]} %>
           </div>
         </div>
       </div>

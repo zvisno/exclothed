@@ -1,26 +1,12 @@
+<h1>Clothes of other users. Check it out.</h1>
+<p>Each piece of clothes will be added to your dressing room if you liked it.</p>
+<p></p>
 <!--Other users clothes-->
 <div class="container">
     <div class="container-fluid">
-      <% @other_users_clothes.each do |item| %>
-              <div class="index-clothes-container">
-                  <div>
-                      <span class="label label-info">
-                        <%=clothing_name(item)%>
-                      </span>
-                      <ul class="list-group matching-params">
-                        <li><%=clothing_size(item)%></li>
-                        <li><%=clothing_brand(item)%></li>
-                        <li><%=clothing_color(item)%></li>
-                        <li> Likes: <%= clothes_likes(item) %></li>
-                        <li>
-                          <label>I want it!
-                            <input class="want-it" type="checkbox" value=<%=item.id%>>
-                          </label>
-                        </li>
-                      </ul>
-                    <%= image_tag clothing_picture(item), size: "200x200", class: "main-image" %>
-                  </div>
-              </div>
+      <% @other_users_clothes.each do |piece_of_clothes| %>
+          <!--Partial for other users clothes-->
+        <%= render partial: 'home/clothes', object: piece_of_clothes %>
       <% end %>
     </div>
 </div>

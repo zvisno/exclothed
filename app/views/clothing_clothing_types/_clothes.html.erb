@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="exchangeable-block-container">
+    <span class="label label-info"> <%= clothing_name(clothes)%> </span>
+    <%= image_tag clothing_picture(clothes), size: "200x200", class: "main-image" %>
+  </div>
+  <div class="exchangeable-block-container">
+    <ul class="list-inline">
+      <li><%=clothing_size(clothes)%></li>
+      <li><%=clothing_brand(clothes)%></li>
+      <li><%=clothing_color(clothes)%></li>
+      <li> Likes: <%= clothes_likes(clothes) %></li>
+      <li>
+        <!--https://github.com/zvisno/wardrobe/commit/60ede0a6295558f1f4322d8fdc0a5a87e73ae376-->
+        <label>I like it!<input class="want-it" type="checkbox" value=<%=clothes.id%>></label>
+      </li>
+      <li><label>Exchange!<input class="exchange-it" type="checkbox" value=<%=clothes.id%> data-user-clothes-id=<%=id%>></label></li>
+      <li>Message</li>
+    </ul>
+  </div>
+</div>

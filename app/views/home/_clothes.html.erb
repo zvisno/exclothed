@@ -1,0 +1,15 @@
+<div class="index-clothes-container">
+    <div>
+        <span class="label label-info"> <%= clothing_name(clothes)%> </span>
+        <ul class="list-group matching-params">
+            <li><%=clothing_size(clothes)%></li>
+            <li><%=clothing_brand(clothes)%></li>
+            <li><%=clothing_color(clothes)%></li>
+            <li> Likes: <%= clothes_likes(clothes) %></li>
+            <li>
+                <label>I like it!<input class="want-it" type="checkbox" value=<%=clothes.id%>></label>
+            </li>
+        </ul>
+        <%= image_tag clothing_picture(clothes), size: "200x200", class: "main-image" %>
+    </div>
+</div>

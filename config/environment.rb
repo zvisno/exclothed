@@ -7,5 +7,3 @@ Rails.application.initialize!
 require 'byebug'
 require 'pry'
 require 'carrierwave/orm/activerecord'
-
-
