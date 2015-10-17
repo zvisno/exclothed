@@ -48,8 +48,6 @@ GEM
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.2.19)
     builder (3.2.2)
-    byebug (4.0.5)
-      columnize (= 0.9.0)
     carrierwave (0.10.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
@@ -63,7 +61,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.9.1.1)
-    columnize (0.9.0)
     daemons (1.2.3)
     debug_inspector (0.0.2)
     devise (3.4.1)
@@ -288,7 +285,6 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass
-  byebug
   carrierwave
   coffee-rails (~> 4.1.0)
   devise
