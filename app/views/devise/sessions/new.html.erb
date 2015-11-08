@@ -19,9 +19,13 @@
                 <%= f.label :remember_me %>
               </div>
           <% end -%>
-
       <% end %>
+
       <%= render "devise/shared/links" %>
+
+      <div>
+          <%= link_to "Sign up", new_registration_path(resource_name) %><br />
+      </div>
   </div>
 
 </div>

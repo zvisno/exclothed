@@ -1,6 +1,9 @@
-<h1>Add clothes to your Dressing room</h1>
-<p>Your clothes will be visible on the home page for other users. They will be able to like it or send you a request to initiate exchanging.</p>
 <div class="container">
+  <header>
+    <div> Why wouldn't you add your piece of clothes?</div>
+    <p><small>It will be visible on the home page for other users. They will be able to like it or send you a request to initiate exchanging.</small></p>
+  </header>
+
   <div class="col-md-4 col-md-offset-4 ">
       <%= form_for @clothing, html: {multipart:true} do |f| %>
           <div class="form-group">

@@ -24,9 +24,6 @@
             <span><%= current_user.email%></span>
             <%= link_to "Logout", destroy_user_session_path, :method => :delete%>
           </div>
-        <% else %>
-            <div id="auth"><%= link_to "Login"%></div>
-            <div id="sign-up"><%= link_to "Sign up", new_registration_path(resource_name) %><br /></div>
         <% end %>
       </div>
     </nav>
