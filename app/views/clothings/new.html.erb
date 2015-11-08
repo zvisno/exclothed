@@ -32,17 +32,17 @@
 
           <div>
             I want to exchange this clothes to:
-            <p>Choose "Any" if you do not know yet what you would like to get in return. </p>
+            <p><small>Choose "Any" if you do not know yet what you would like to get in return.</small> </p>
 
             <%= f.select :exchangeable_clothing_type_ids,
                          ClothingType.all.collect { |e| [e.name, e.id] },
-                                       {:prompt => "Please select"},
+                                       {:prompt => "Any"},
                                       {
                                       class: "form-control",
                                       multiple: true}%>
           </div>
           <div><p>
-            Upload a picture of your clothes:
+            Upload a picture of your piece of clothes:
             <%= f.fields_for :pictures, html: { multipart: true } do |picture| %>
                 <%=picture.file_field  :picture%>
                 <%= picture.hidden_field :picture_cache %>

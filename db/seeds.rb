@@ -4,18 +4,19 @@
 # Examples:
 #
 colors = [
+    {name: 'Gold'},
     {name: 'Green'},
     {name: 'Gray'},
-    {name: 'Gold'},
-    {name: 'Red' },
-    {name: 'Brown'},
     {name: 'Blue' },
     {name: 'Black'},
-    {name: 'White'},
-    {name: 'Yellow'},
+    {name: 'Brown'},
+    {name: 'Lila'},
     {name: 'Orange'},
     {name: 'Purple'},
-    {name: 'Pink'}
+    {name: 'Pink'},
+    {name: 'Red' },
+    {name: 'White'},
+    {name: 'Yellow'}
 ]
 
 color = Color.new
@@ -30,7 +31,13 @@ sizes = [
     {name: 'Small'},
     {name: 'Medium'},
     {name: 'Large'},
-    {name: 'XLarge'}
+    {name: 'XLarge'},
+    {name: '34'},
+    {name: '36'},
+    {name: '38'},
+    {name: '40'},
+    {name: '42'},
+    {name: '44'}
 ]
 
 size = Size.new
@@ -44,7 +51,6 @@ clothing_types = [
     {name: 'Cardigan'},
     {name: 'Coat'},
     {name: 'Hoody'},
-    {name: 'Skirt'},
     {name: 'Trausers'},
     {name: 'Jacket'},
     {name: 'Jeans'},
@@ -59,6 +65,7 @@ clothing_types = [
     {name: 'Shorts'},
     {name: 'Scarf'},
     {name: 'Suit'},
+    {name: 'Skirt'},
     {name: 'Sweatshirt'},
     {name: 'Vest'}
 ]
